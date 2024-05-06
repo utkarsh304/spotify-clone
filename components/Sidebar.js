@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import useSpotify from "../hooks/useSpotify";
 import { useRecoilState } from "recoil";
 import { playlistIdState } from "../atoms/playlistAtom";
+import Link from "next/link";
 
 function Sidebar(props) {
     const spotifyApi = useSpotify();
@@ -26,6 +27,9 @@ function Sidebar(props) {
     return (
     <div className="text-gray-500 p-5 text-xs lg:text-sm border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex pb-36">
         <div className="space-y-4">
+            <Link href="/login" className="flex items-center space-x-2 hover:text-white" >
+                Login
+            </Link>
             <button className="flex items-center space-x-2 hover:text-white">
                 <HomeIcon className="h-5 w-5" />
                 <p>Home</p>
